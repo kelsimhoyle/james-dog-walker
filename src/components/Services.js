@@ -30,7 +30,10 @@ const Services = () => {
         `}
       render={data => (
         <div className="container mx-auto my-20">
-          <div className="grid grid-cols-2 gap-3 place-items-center">
+          <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl text-yellow-400 text-center	">
+            Our Services
+            </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center">
             {data.allAirtable.nodes.map(service => (
               <div>
                 <GatsbyImage image={getImage(service.data.Image.localFiles[0].childImageSharp)} alt={service.data.Name} style={{
