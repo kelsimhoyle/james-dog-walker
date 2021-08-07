@@ -19,14 +19,14 @@ const Header = ({ siteTitle }) => (
       <>
         <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
           <nav
-            className="relative flex items-center justify-between sm:h-10 lg:justify-start"
+            className="relative flex items-center justify-between h-full lg:justify-start"
             aria-label="Global"
           >
             <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
               <div className="flex items-center justify-between w-full md:w-auto">
                 <a href="/">
                   <span className="sr-only">James the Dog Walker</span>
-                  <FaPaw className="text-4xl text-yellow-400" />
+                  <StaticImage src="../images/James.png" height="100" />
 
                 </a>
                 <div className="-mr-2 flex items-center md:hidden">
@@ -75,7 +75,7 @@ const Header = ({ siteTitle }) => (
             <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="px-5 pt-4 flex items-center justify-between">
                 <div>
-                <FaPaw className="text-4xl text-yellow-400" />
+                <FaPaw className="text-4xl text-green-400" />
 
                 </div>
                 <div className="-mr-2">

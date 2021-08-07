@@ -9,9 +9,9 @@ const About = () => {
 
 
 
-    return (
-        <StaticQuery
-        query={graphql`
+  return (
+    <StaticQuery
+      query={graphql`
           query AboutQuery {
             airtable(table: {eq: "Website Data"}, data: {Name: {eq: "About"}}) {
                 data {
@@ -31,26 +31,32 @@ const About = () => {
               }
           }
         `}
-        render={data => (
-        <div className="grid-cols-1 md:grid-cols-2 mt-20 relative md:grid  mb-56 md:mb-0">
-           <div>
-                <GatsbyImage image={getImage(data.airtable.data.Image.localFiles[0].childrenImageSharp[0])} alt="The Doggies" />
+      render={data => (
+        <div className="md:bg-green-500 md:py-10">
+        <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
+          <div className="max-w-lg">
+            <GatsbyImage image={getImage(data.airtable.data.Image.localFiles[0].childrenImageSharp[0])} alt="The Doggies" />
 
+          </div>
+          <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10  ">
+            <div className="flex flex-col justify-center items-center md:items-start space-y-4 shadow-md bg-white p-10 rounded text-center	md:text-left">
+              <div>
+              <FaPaw className="text-6xl text-green-500" />
+              </div>
+              <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.airtable.data.Content.childMarkdownRemark.html
+                }}
+              />
             </div>
-            <div className="flex flex-col justify-center space-y-6 p-20	absolute md:static -bottom-56 z-10">
-            <FaPaw className="text-6xl text-yellow-400 " />
-                <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: data.airtable.data.Content.childMarkdownRemark.html
-                    }}
-                />
-            </div>
-           
+          </div>
+
+        </div>
         </div>
       )}
-      />
-    );
+    />
+  );
 };
 
 
