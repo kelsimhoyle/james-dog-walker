@@ -29,13 +29,12 @@ const Services = () => {
           }
         `}
       render={data => (
-        <div className="container mx-auto my-20 px-4 sm:px-6">
+        <div className="container mx-auto my-20 px-4 sm:px-6 bg-white">
           <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl text-green-500 text-center	">
             Our Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center">
             {data.allAirtable.nodes.map(service => (
-              <div class=" bg-gray-100 mt-4">
                 <div class=" bg-white  mx-auto shadow-lg rounded-lg hover:shadow-xl transition duration-200 max-w-sm">
                   <GatsbyImage image={getImage(service.data.Image.localFiles[0].childImageSharp)} alt={service.data.Name} className="rounded-t-lg" />
                   <div class="py-4 px-8">
@@ -49,7 +48,6 @@ const Services = () => {
                     {/* <p class="hover:cursor-pointer py-3 text-gray-600 leading-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora neque eum autem repellat iure perferendis, possimus blanditiis temporibus doloribus corrupti.</p> */}
                   </div>
                 </div>
-              </div>
             ))}
           </div>
           <div className="mt-5 sm:mt-8 sm:flex justify-center sm:m-">

@@ -9,6 +9,26 @@ module.exports = {
     title: `James the Dog Walker`,
     description: `Dog walking services in Lakewood, California`,
     author: `Kelsi Hoyle`,
+    pages: [
+      { name: "Home",
+       href: "/" 
+      },
+      {
+        name: "Why Us?",
+        href: "/about"
+      },
+      {
+        name: "Services",
+        href: "/services"
+      },
+      {
+        name: "Testimonials",
+        href: "/testimonials"
+      },
+      {
+        name: "Contact",
+        href: "/contact"
+      }]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

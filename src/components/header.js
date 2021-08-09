@@ -13,13 +13,13 @@ import { navigate } from '@reach/router'
 import { logout, isLoggedIn } from "../utils/auth"
 import { Auth } from 'aws-amplify'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, pages }) => (
   <Popover>
     {({ open }) => (
       <>
-        <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+        <div className="relative pt-6 px-4 sm:px-6 lg:px-10">
           <nav
-            className="relative flex items-center justify-between h-full lg:justify-start"
+            className="relative flex items-center justify-between h-full "
             aria-label="Global"
           >
             <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
@@ -38,11 +38,11 @@ const Header = ({ siteTitle }) => (
               </div>
             </div>
             <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-              {/* {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+              {pages.map((item) => (
+              <Link key={item.name} to={item.href} className="font-medium text-gray-500 hover:text-gray-900">
                 {item.name}
-              </a>
-            ))} */}
+              </Link>
+            ))}
               {
                 isLoggedIn() && (
                   <p
@@ -70,7 +70,7 @@ const Header = ({ siteTitle }) => (
           <Popover.Panel
             focus
             static
-            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-20"
           >
             <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="px-5 pt-4 flex items-center justify-between">
@@ -86,15 +86,15 @@ const Header = ({ siteTitle }) => (
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {/* {navigation.map((item) => (
-                <a
+                 {pages.map((item) => (
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                 >
                   {item.name}
-                </a>
-              ))} */}
+                </Link>
+              ))} 
               </div>
              
 
