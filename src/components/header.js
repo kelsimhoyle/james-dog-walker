@@ -6,8 +6,6 @@ import { MdClose } from "@react-icons/all-files/md/MdClose";
 import { Popover, Transition } from '@headlessui/react'
 import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
 
-
-
 import { navigate } from '@reach/router'
 
 import { logout, isLoggedIn } from "../utils/auth"

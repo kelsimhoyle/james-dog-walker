@@ -35,7 +35,7 @@ const Layout = ({ children, data }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} pages={data.site.siteMetadata.pages} />
         {children}
-        <Footer />
+        <Footer pages={data.site.siteMetadata.pages} />
       </>
     )}
   />

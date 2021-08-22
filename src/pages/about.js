@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
+import TwoCta from "../components/TwoCta";
 
 
 const About = ({ data }) => {
@@ -9,22 +9,10 @@ const About = ({ data }) => {
     const about = data.about.data;
     const why = data.why.nodes
 
-    console.log(why);
 
     return (
         <>
-            <div className="container mx-auto">
-                <div className="flex flex-row max-w-md content-center mx-auto	items-center space-x-2 rounded-md	shadow-md">
-                    <div className="p-4">
-                        <h2 className="text-2xl text-green-700 text-right font-bold">{mission.Name}:</h2>
-                    </div>
-                    <div className="text-lg p-4"
-                        dangerouslySetInnerHTML={{
-                            __html: mission.Content.childMarkdownRemark.html
-                        }}
-                    />
-                </div>
-            </div>
+
 
             <div className="md:bg-green-500 md:py-10 ">
                 <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
@@ -32,7 +20,7 @@ const About = ({ data }) => {
                         <GatsbyImage image={getImage(about.Image.localFiles[0].childImageSharp)} alt="The Doggies" />
 
                     </div>
-                    <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10  ">
+                    <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10   flex flex-col justify-center items-center md:items-start space-y-2">
                         <div className="flex flex-col justify-center items-center md:items-start space-y-4 shadow-md bg-white p-10 rounded text-center	md:text-left">
                             <div>
                                 {/* <FaPaw className="text-6xl text-green-500" /> */}
@@ -44,7 +32,14 @@ const About = ({ data }) => {
                                 }}
                             />
                         </div>
+                        <div >
+                            <TwoCta
+                                one={{ text: "Testimonials", href: "/testimonials" }}
+                                two={{ text: "Contact", href: "/contact" }}
+                            />
+                        </div>
                     </div>
+
 
                 </div>
             </div>
@@ -74,6 +69,7 @@ const About = ({ data }) => {
 
 
                 </div>
+
             </div>
         </>
     );
