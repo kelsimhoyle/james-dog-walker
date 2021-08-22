@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
-import Footer from "./Footer";
+import Header from "../components/header"
+import Footer from "../components/Footer";
 // import './layout.css'
 
 const Layout = ({ children, data }) => (

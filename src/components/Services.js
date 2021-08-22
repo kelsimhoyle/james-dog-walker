@@ -7,7 +7,7 @@ const Services = () => {
     <StaticQuery
       query={graphql`
           query ServicesQuery {
-            allAirtable(filter: {data: {Category: {in: "Services"}}}, sort: {fields: id}) {
+            allAirtable(filter: {table: {eq: "Website Data"}, data: {Category: {in: "Services"}}}, sort: {fields: id}) {
                 nodes {
                   data {
                     Name

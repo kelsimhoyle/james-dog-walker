@@ -62,6 +62,16 @@ module.exports = {
             tableName: "Testimonials",
             mapping: { "Image": "fileNode" }
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "About",
+            mapping: { "Image": "fileNode", "Content": "text/markdown" }
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "Services",
+            mapping: { "Image": "fileNode", "Content": "text/markdown" }
+          },
         ]
       }
     },
@@ -78,6 +88,7 @@ module.exports = {
       },
 
     },
+    `gatsby-plugin-layout`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
