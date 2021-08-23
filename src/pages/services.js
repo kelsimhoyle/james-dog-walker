@@ -11,7 +11,7 @@ const Services = ({ data }) => {
                 <GatsbyImage className="min-w-full max-h-96" objectFit="cover"
                     objectPosition="25% 25%" image={getImage(summary.data.Image.localFiles[0])} />
                 <div className="absolute inset-x-1/2 left-1/3	top-1/4 w-1/3 bg-opacity-50	bg-green-700	rounded-xl		p-4	">
-                <h1 className=" text-center text-5xl text-white font-bold">Services</h1>
+                    <h1 className=" text-center text-5xl text-white font-bold">Services</h1>
 
                     <div
                         className="text-center	text-2xl mt-4	tracking-wide	text-white	"
@@ -26,7 +26,11 @@ const Services = ({ data }) => {
                 <div className="md:flex md:justify-center md:space-x-8 md:px-14">
 
                     {services.nodes.map(service => (
-                        <Card img={getImage(service.data.Image.localFiles[0])} content={service.data.Content.childMarkdownRemark.html} />
+                        <Card
+                            img={getImage(service.data.Image.localFiles[0])}
+                            content={service.data.Content.childMarkdownRemark.html}
+                            btn={false}
+                        />
                     ))}
                 </div>
             </div>
