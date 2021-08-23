@@ -7,14 +7,14 @@ const Services = ({ data }) => {
     const { summary, services } = data;
     return (
         <>
-            <div className="min-w-full	relative">
+            <div className="min-w-full relative">
                 <GatsbyImage className="min-w-full max-h-96" objectFit="cover"
                     objectPosition="25% 25%" image={getImage(summary.data.Image.localFiles[0])} />
-                <div className="absolute inset-x-1/2 left-1/3	top-1/4 w-1/3 bg-opacity-50	bg-green-700	rounded-xl		p-4	">
-                    <h1 className=" text-center text-5xl text-white font-bold">Services</h1>
+                <div className="absolute bottom-2 md:inset-x-1/4  md:inset-y-1/3 md:w-1/2 bg-opacity-50	bg-green-700 rounded-xl p-4 w-full p-4	">
+                    <h1 className=" text-center text-2xl md:text-5xl text-white font-bold">Services</h1>
 
                     <div
-                        className="text-center	text-2xl mt-4	tracking-wide	text-white	"
+                        className="text-center text-l	md:text-2xl mt-4	tracking-wide	text-white	"
                         dangerouslySetInnerHTML={{
                             __html: summary.data.Content.childMarkdownRemark.html
                         }}
