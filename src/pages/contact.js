@@ -1,26 +1,9 @@
-import React, {useState} from "react";
-import addContact from "../functions/addContact";
+import React from "react";
+import ContactForm from "../components/ContactForm";
 
 
 const Contact = () => {
-    const [data, setData] = useState({ Name: "", Email: "", Message: "", Tel: "", errors: [], submitting: false, submitted: false });
 
-
-    const handleInputChange = (e) => setData({
-        ...data,
-        [e.currentTarget.name]: e.currentTarget.value
-    });
-
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        setData({ ...data, submitting: true });
-        const { Name, Email, Tel, Message } = data;
-
-        if (addContact({ Name, Email, Tel, Message })) return setData({ ...data, submitting: false, submitted: true });
-
-        return setData({ ...data, submitting: false, submitted: false, errors: [...data.errors, "Error submitting contact request."] })
-    }
 
     return (
         <div className="relative flex items-top justify-center min-h-screen bg-green-300 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -63,62 +46,8 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <form
-                            onSubmit={handleSubmit}
-                            className="p-6 flex flex-col justify-center bg-white rounded-b-lg md:rounded-r-lg md:rounded-b-none">
-                            <div className="flex flex-col">
-                                <label for="Name" className="hidden">Full Name</label>
-                                <input
-                                    type="name"
-                                    name="Name"
-                                    id="Name"
-                                    placeholder="Full Name"
-                                    value={data.Name}
-                                    onChange={handleInputChange}
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-green-500 focus:outline-none" />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="Email" className="hidden">Email</label>
-                                <input
-                                    type="email"
-                                    name="Email"
-                                    id="Email"
-                                    placeholder="Email"
-                                    value={data.Email}
-                                    onChange={handleInputChange}
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-green-500 focus:outline-none" />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="Tel" className="hidden">Number</label>
-                                <input
-                                    type="tel"
-                                    name="Tel"
-                                    id="Tel"
-                                    placeholder="Telephone Number"
-                                    value={data.Tel}
-                                    onChange={handleInputChange}
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-green-500 focus:outline-none" />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="Message" className="hidden">Message</label>
-                                <input
-                                    type="text"
-                                    name="Message"
-                                    id="Message"
-                                    placeholder="Message"
-                                    value={data.Message}
-                                    onChange={handleInputChange}
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-green-500 focus:outline-none" />
-                            </div>
-
-                            <button type="submit" className="md:w-32 bg-green-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-green-500 transition ease-in-out duration-300">
-                                Submit
-                            </button>
-                        </form>
+                            <ContactForm />
+                        
                     </div>
                 </div>
             </div>
