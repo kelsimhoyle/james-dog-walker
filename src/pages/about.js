@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import TwoCta from "../components/TwoCta";
+import Card from "../components/Card";
 
 
 const About = ({ data }) => {
@@ -45,25 +46,13 @@ const About = ({ data }) => {
             </div>
 
             <div className="bg-green-100 py-14">
-                <h1 className="mt-8 text-center text-5xl text-green-600 font-bold">Why choose us?</h1>
+                <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">Why choose us?</h2>
 
                 <div className="md:flex md:justify-center md:space-x-8 md:px-14">
                     {why.map(w => (
-                        <div className="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
-                            <div className="w-sm">
-                                <GatsbyImage className="w-64" image={getImage(w.data.Image.localFiles[0].childImageSharp)} alt="" />
-                                <div className="mt-4 text-green-600 text-center">
-                                    {/* <h1 className="text-xl font-bold">Communications</h1> */}
-                                    <div
-                                        className="mt-4 text-gray-600"
-                                        dangerouslySetInnerHTML={{
-                                            __html: w.data.Content.childMarkdownRemark.html
-                                        }}
-                                    />
-                                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
-                                </div>
-                            </div>
-                        </div>
+                        <Card
+                            img={getImage(w.data.Image.localFiles[0].childImageSharp)}
+                            content={w.data.Content.childMarkdownRemark.html} />
                     ))}
 
 
