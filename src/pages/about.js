@@ -52,7 +52,9 @@ const About = ({ data }) => {
                     {why.map(w => (
                         <Card
                             img={getImage(w.data.Image.localFiles[0].childImageSharp)}
-                            content={w.data.Content.childMarkdownRemark.html} />
+                            content={w.data.Content.childMarkdownRemark.html}
+                            btn={true}
+                        />
                     ))}
 
 

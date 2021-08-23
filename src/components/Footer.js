@@ -10,7 +10,7 @@ const Footer = ({ pages }) => (
             <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                 <p className="w-full md:w-2/3 text-white">Contact to learn more and set up a meet and great.</p>
                 <div className="w-44 pt-6 md:pt-0">
-                    <a className="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact US</a>
+                    <Link to="/contact" className="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact</Link>
                 </div>
             </div>
             <div className="flex flex-col">
@@ -41,7 +41,7 @@ const Footer = ({ pages }) => (
                     </div>
                 </div>
                 <hr className="border-white" />
-                <p className="w-full text-center my-12 text-white">Copyright © 2020 James the Dog Walker</p>
+                <p className="w-full text-center my-12 text-white">Copyright © 2021 James the Dog Walker</p>
             </div>
         </div>
     </div>
