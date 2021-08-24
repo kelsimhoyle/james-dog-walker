@@ -25,7 +25,7 @@ const Layout = ({ children, data }) => (
           Image {
             localFiles {
               childImageSharp {
-                gatsbyImageData(height: 125, width: 300)
+                gatsbyImageData(height: 125, width: 300, placeholder: BLURRED)
               }
             }
           }
@@ -36,7 +36,7 @@ const Layout = ({ children, data }) => (
           Image {
             localFiles {
               childImageSharp {
-                gatsbyImageData(width: 100)
+                gatsbyImageData(width: 100, placeholder: BLURRED)
               }
             }
           }
