@@ -22,10 +22,6 @@ module.exports = {
         href: "/services"
       },
       {
-        name: "Testimonials",
-        href: "/testimonials"
-      },
-      {
         name: "Contact",
         href: "/contact"
       }]
