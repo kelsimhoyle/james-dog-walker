@@ -53,7 +53,7 @@ const About = ({ data }) => {
                         <Card
                             img={getImage(w.data.Image.localFiles[0].childImageSharp)}
                             content={w.data.Content.childMarkdownRemark.html}
-                            btn={true}
+                            btn={false}
                         />
                     ))}
 

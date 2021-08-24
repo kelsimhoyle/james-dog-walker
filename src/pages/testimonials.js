@@ -7,8 +7,8 @@ const Testimonials = ({ data }) => {
     const testimonials = data.allAirtable.nodes;
     console.log(data)
     return (
-        <div className="bg-green-500 md:py-10">
-            <h1 className=" text-center text-5xl text-white font-bold my-6">Testimonials</h1>
+        <div className="py-10">
+            <h1 className=" text-center text-green-500 text-5xl font-bold my-6">Testimonials</h1>
 
             {testimonials.map(test => (
                 <Testimonial

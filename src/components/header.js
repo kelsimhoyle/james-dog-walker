@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
 import { Link } from 'gatsby';
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { MdMenu } from "@react-icons/all-files/md/MdMenu";
 import { MdClose } from "@react-icons/all-files/md/MdClose";
 import { Popover, Transition } from '@headlessui/react'
-import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
 
 import { navigate } from '@reach/router'
 

@@ -7,6 +7,7 @@ import Services from "../components/Services";
 
 import Amplify from 'aws-amplify'
 import config from '../aws-exports'
+import Testimonial from '../components/Testimonial';
 Amplify.configure(config)
 
 const IndexPage = ({ data }) => {
@@ -16,9 +17,23 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Landing bg={main} logo={logo} />
-
       <About />
       <Services />
+      <div className="bg-green-600 mx-auto px-4 pb-10 md:py-6 sm:px-6 bg-white">
+          <h2 className="text-2xl py-8 tracking-tight font-extrabold  sm:text-4xl md:text-5xl text-white text-center	">
+            Pawsitive Reviews
+          </h2>
+          <div className="md:py-10">
+      {data.testimonials.nodes.map(test => (
+        <Testimonial
+          key={test.data.Name}
+          img={getImage(test.data.Image.localFiles[0].childImageSharp)}
+          text={test.data.Testimonial}
+          name={test.data.Name}
+        />
+      ))}
+      </div>
+      </div>
     </>
   )
 };
@@ -42,6 +57,23 @@ query {
         localFiles {
           childrenImageSharp {
             gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+      }
+    }
+  }
+  testimonials: allAirtable(
+    filter: {table: {eq: "Testimonials"}, data: {Status: {eq: "Post"}}}
+  ) {
+    nodes {
+      data {
+        Name
+        Testimonial
+        Image {
+          localFiles {
+            childImageSharp {
+              gatsbyImageData (width: 500)
+            }
           }
         }
       }
