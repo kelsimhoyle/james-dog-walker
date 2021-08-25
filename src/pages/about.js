@@ -1,69 +1,72 @@
 import React from "react";
 import { graphql } from "gatsby"
+import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import TwoCta from "../components/TwoCta";
+import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
+// import TwoCta from "../components/TwoCta";
 import Card from "../components/Card";
 
 
 const About = ({ data }) => {
-    const mission = data.mission.data;
-    const about = data.about.data;
-    const why = data.why.nodes
+  // const mission = data.mission.data;
+  const about = data.about.data;
+  const why = data.why.nodes
 
-
-    return (
-        <>
-
-
-            <div className="md:bg-green-500 md:py-10 ">
-                <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
-                    <div className="max-w-lg">
-                        <GatsbyImage image={getImage(about.Image.localFiles[0].childImageSharp)} alt="The Doggies" />
-
-                    </div>
-                    <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10   flex flex-col justify-center items-center md:items-start space-y-2">
-                        <div className="flex flex-col justify-center items-center md:items-start space-y-4 shadow-md bg-white p-10 rounded text-center	md:text-left">
-                            <div>
-                                {/* <FaPaw className="text-6xl text-green-500" /> */}
-                            </div>
-                            <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: about.Content.childMarkdownRemark.html
-                                }}
-                            />
-                        </div>
-                        <div >
-                            <TwoCta
+  return (
+    <>
+      <div className="md:bg-green-500 md:py-10 ">
+        <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
+          <div className="max-w-lg">
+            <GatsbyImage image={getImage(about.Image.localFiles[0].childImageSharp)} alt="The Doggies" />
+          </div>
+          <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10   flex flex-col justify-center items-center md:items-start space-y-2">
+            <div className="flex flex-col justify-center items-center md:items-start space-y-4 shadow-md bg-white p-10 rounded text-center	md:text-left">
+              <div>
+                <FaPaw className="text-6xl text-green-500" />
+              </div>
+              <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: about.Content.childMarkdownRemark.html
+                }}
+              />
+            </div>
+            <div>
+              <div className="mt-3 sm:mt-0 sm:ml-3">
+                <Link to="/contact" className="w-full flex items-center justify-center px-12 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 md:py-4 md:text-lg md:px-10">
+                  Contact
+                </Link>
+              </div>
+              {/* <TwoCta
                                 one={{ text: "Testimonials", href: "/testimonials" }}
                                 two={{ text: "Contact", href: "/contact" }}
-                            />
-                        </div>
-                    </div>
-
-
-                </div>
+                            /> */}
             </div>
-
-            <div className="bg-green-100 py-14">
-                <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">Why choose us?</h2>
-
-                <div className="md:flex md:justify-center md:space-x-8 md:px-14">
-                    {why.map(w => (
-                        <Card
-                            img={getImage(w.data.Image.localFiles[0].childImageSharp)}
-                            content={w.data.Content.childMarkdownRemark.html}
-                            btn={false}
-                        />
-                    ))}
+          </div>
 
 
+        </div>
+      </div>
 
-                </div>
+      <div className="bg-green-100 py-14">
+        <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">Why choose us?</h2>
 
-            </div>
-        </>
-    );
+        <div className="md:flex md:justify-center md:space-x-8 md:px-14">
+          {why.map(w => (
+            <Card
+              img={getImage(w.data.Image.localFiles[0].childImageSharp)}
+              content={w.data.Content.childMarkdownRemark.html}
+              btn={true}
+            />
+          ))}
+
+
+
+        </div>
+
+      </div>
+    </>
+  );
 };
 
 export const aboutQuery = graphql`

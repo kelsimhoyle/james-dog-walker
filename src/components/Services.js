@@ -31,7 +31,7 @@ const Services = () => {
         `}
       render={data => (
         <div className="container mx-auto my-20 px-4 sm:px-6 bg-white">
-          <h2 className="text-2xl py-4 tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl text-green-500 text-center	">
+          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl text-green-500 text-center	">
             Our Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center">

@@ -11,12 +11,22 @@ import config from '../aws-exports'
 Amplify.configure(config)
 
 const IndexPage = ({ data }) => {
-  const main = getImage(data.main.data.Image.localFiles[0].childrenImageSharp[0]);
+  const main = getImage(data.mainImg.data.Image.localFiles[0].childrenImageSharp[0]);
   const logo = getImage(data.logo.data.Image.localFiles[0].childrenImageSharp[0]);
+
+  const { title, subtitle, paragraph } = data;
+  console.log(data, title)
 
   return (
     <>
-      <Landing bg={main} logo={logo} />
+      <Landing
+        bg={main}
+        logo={logo}
+        title={title.data.Content.childMarkdownRemark.excerpt}
+        subtitle={subtitle.data.Content.childMarkdownRemark.excerpt}
+        title={title.data.Content.childMarkdownRemark.excerpt}
+        paragraph={paragraph.data.Content.childMarkdownRemark.excerpt}
+      />
       <About />
       <Services />
       {/* <div className="bg-green-600 mx-auto px-4 pb-10 md:py-6 sm:px-6 bg-white">
@@ -40,13 +50,46 @@ const IndexPage = ({ data }) => {
 
 export const indexQuery = graphql`
 query {
-  main: airtable(table: {eq: "Website Data"}, data: {Name: {eq: "Main Image"}}) {
+  mainImg: airtable(table: {eq: "Website Data"}, data: {Name: {eq: "Main Image"}}) {
     data {
       Image {
         localFiles {
           childrenImageSharp {
             gatsbyImageData(placeholder: BLURRED)
           }
+        }
+      }
+    }
+  }
+  title: airtable(table: {eq: "Website Data"}, data: {Name: {eq: "Home Title"}}) {
+    data {
+      Content {
+        childMarkdownRemark {
+          excerpt
+        }
+      }
+    }
+  }
+  subtitle: airtable(
+    table: {eq: "Website Data"}
+    data: {Name: {eq: "Home Subtitle"}}
+  ) {
+    data {
+      Content {
+        childMarkdownRemark {
+          excerpt
+        }
+      }
+    }
+  }
+  paragraph: airtable(
+    table: {eq: "Website Data"}
+    data: {Name: {eq: "Home Paragraph"}}
+  ) {
+    data {
+      Content {
+        childMarkdownRemark {
+          excerpt
         }
       }
     }
@@ -72,7 +115,7 @@ query {
         Image {
           localFiles {
             childImageSharp {
-              gatsbyImageData (width: 500)
+              gatsbyImageData(width: 500)
             }
           }
         }
@@ -80,6 +123,7 @@ query {
     }
   }
 }
+
 `
 
 export default IndexPage
