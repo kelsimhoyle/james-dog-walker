@@ -4,22 +4,22 @@ import { getImage } from "gatsby-plugin-image";
 import Testimonial from "../components/Testimonial";
 
 const Testimonials = ({ data }) => {
-    const testimonials = data.allAirtable.nodes;
-    console.log(data)
-    return (
-        <div className="py-10">
-            <h1 className=" text-center text-green-500 text-5xl font-bold my-6">Testimonials</h1>
-
-            {testimonials.map(test => (
-                <Testimonial
-                    key={test.data.Name}
-                    img={getImage(test.data.Image.localFiles[0].childImageSharp)}
-                    text={test.data.Testimonial}
-                    name={test.data.Name}
-                />
-            ))}
-        </div>
-    );
+  const testimonials = data.allAirtable.nodes;
+  return (
+    <div className="container m-auto py-8">
+      <h1 className=" text-center text-green-500 text-5xl font-bold my-6">Testimonials</h1>
+      <div class="-mx-3 md:flex items-start">
+          {testimonials.map(test => (
+            <Testimonial
+              key={test.data.Name}
+              img={getImage(test.data.Image.localFiles[0].childImageSharp)}
+              text={test.data.Testimonial}
+              name={test.data.Name}
+            />
+          ))}
+      </div>
+    </div>
+  );
 };
 
 export const testimonialQuery = graphql`
@@ -34,7 +34,7 @@ query {
           Image {
             localFiles {
               childImageSharp {
-                gatsbyImageData (width: 500)
+                gatsbyImageData (width: 300)
               }
             }
           }
