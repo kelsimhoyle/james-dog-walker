@@ -10,8 +10,9 @@ module.exports = {
     description: `Dog walking services in Lakewood, California`,
     author: `Kelsi Hoyle`,
     pages: [
-      { name: "Home",
-       href: "/" 
+      {
+        name: "Home",
+        href: "/"
       },
       {
         name: "Why Us?",
@@ -22,9 +23,15 @@ module.exports = {
         href: "/services"
       },
       {
+        name: "FAQ's",
+        href: "/faq"
+      },
+      {
         name: "Contact",
         href: "/contact"
-      }]
+      },
+
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -68,6 +75,11 @@ module.exports = {
             tableName: "Services",
             mapping: { "Image": "fileNode", "Content": "text/markdown" }
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "FAQ",
+            mapping: { "Answer": "text/markdown" }
+          },
         ]
       }
     },
@@ -85,8 +97,5 @@ module.exports = {
 
     },
     `gatsby-plugin-layout`
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
