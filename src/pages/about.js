@@ -5,10 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
 // import TwoCta from "../components/TwoCta";
 import Card from "../components/Card";
-
+import BottomBorder from "../components/BottomBorder";
 
 const About = ({ data }) => {
-  // const mission = data.mission.data;
   const about = data.about.data;
   const why = data.why.nodes
 
@@ -49,14 +48,18 @@ const About = ({ data }) => {
       </div>
 
       <div className="bg-green-100 py-14">
-        <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">Why choose us?</h2>
-
+        <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">
+          Why choose us?
+          </h2>
+          <BottomBorder />
         <div className="md:flex md:justify-center md:space-x-8 md:px-14">
           {why.map(w => (
             <Card
+              key={w.data.Name}
+              title={w.data.Name}
               img={getImage(w.data.Image.localFiles[0].childImageSharp)}
               content={w.data.Content.childMarkdownRemark.html}
-              btn={true}
+              btn={false}
             />
           ))}
 
@@ -72,23 +75,6 @@ const About = ({ data }) => {
 export const aboutQuery = graphql`
 query  {
     about: airtable( data: {Category: {eq: "About"}}) {
-      data {
-        Name
-        Content {
-          childMarkdownRemark {
-            html
-          }
-        }
-        Image {
-          localFiles {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
-        }
-      }
-    }
-    mission: airtable(data: {Category: {eq: "Mission"}}) {
       data {
         Name
         Content {

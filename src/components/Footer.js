@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 const Footer = ({ pages }) => (
-    <div className="w-full min-h-screen flex items-center justify-center bg-green-800">
+    <div className="w-full min-h-screen pt-6 flex items-center justify-center bg-green-800">
         <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
             <div className="w-full text-7xl font-bold">
                 <h2 className="w-full md:w-2/3">Let's get waggin' today.</h2>

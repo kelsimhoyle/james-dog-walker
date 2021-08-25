@@ -50,6 +50,7 @@ const Services = ({ data }) => {
 
           {services.nodes.map(service => (
             <Card
+              key={service.data.Name}
               title={service.data.Name}
               img={getImage(service.data.Image.localFiles[0])}
               content={service.data.Content.childMarkdownRemark.html}

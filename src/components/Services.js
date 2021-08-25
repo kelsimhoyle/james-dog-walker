@@ -1,7 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import Card from "./Card";
+import BottomBorder from "./BottomBorder";
 
 const Services = () => {
   return (
@@ -32,8 +33,9 @@ const Services = () => {
       render={data => (
         <div className="container mx-auto my-20 px-4 sm:px-6 bg-white">
           <h2 className="text-2xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl text-green-500 text-center	">
-            Our Services
+            Services
           </h2>
+          <BottomBorder />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 place-items-center">
             {data.allAirtable.nodes.map(service => (
               <Card
