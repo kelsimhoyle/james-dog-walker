@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image';
+// import Seo from "../components/Seo"
 import Header from "../components/header"
 import Footer from "../components/Footer";
 // import './layout.css'
@@ -46,7 +47,7 @@ const Layout = ({ children, data }) => (
     `}
     render={data => (
       <>
-        <Helmet
+        {/* <Helmet
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Sample' },
@@ -54,7 +55,7 @@ const Layout = ({ children, data }) => (
           ]}
         >
           <html lang="en" />
-        </Helmet>
+        </Helmet> */}
         <Header
           siteTitle={data.site.siteMetadata.title}
           pages={data.site.siteMetadata.pages}

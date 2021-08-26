@@ -4,6 +4,7 @@ import { getImage } from "gatsby-plugin-image";
 import Landing from "../components/Landing";
 import About from "../components/About";
 import Services from "../components/Services";
+import Seo from '../components/Seo';
 
 import Amplify from 'aws-amplify'
 import config from '../aws-exports'
@@ -15,10 +16,10 @@ const IndexPage = ({ data }) => {
   const logo = getImage(data.logo.data.Image.localFiles[0].childrenImageSharp[0]);
 
   const { title, subtitle, paragraph } = data;
-  console.log(data, title)
 
   return (
     <>
+      <Seo />
       <Landing
         bg={main}
         logo={logo}

@@ -8,7 +8,10 @@ module.exports = {
   siteMetadata: {
     title: `James the Dog Walker`,
     description: `Dog walking services in Lakewood, California`,
-    author: `Kelsi Hoyle`,
+    keywords: [`Southern California dog walker`, `dog walking`, `dog sitting`, `dog sitter near me`, `dog walker near me prices`, `dog walking prices`, `Lakewood dog walker`, `dog walking services`, `dog walker near me`, `local dog walker`,], 
+    siteUrl: `https://jamesthedogwalker.com`,
+    image: `logo.jpg`,
+    instagramUsername: ``,
     pages: [
       {
         name: "Home",
@@ -30,8 +33,8 @@ module.exports = {
         name: "Contact",
         href: "/contact"
       },
-
-    ]
+    ],
+    author: `Kelsi Hoyle`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
