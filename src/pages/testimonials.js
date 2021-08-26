@@ -2,24 +2,28 @@ import React from "react";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import Testimonial from "../components/Testimonial";
+// import Seo from "../components/Seo";
 
 const Testimonials = ({ data }) => {
-    const testimonials = data.allAirtable.nodes;
-    console.log(data)
-    return (
-        <div className="py-10">
-            <h1 className=" text-center text-green-500 text-5xl font-bold my-6">Testimonials</h1>
+  const testimonials = data.allAirtable.nodes;
 
-            {testimonials.map(test => (
-                <Testimonial
-                    key={test.data.Name}
-                    img={getImage(test.data.Image.localFiles[0].childImageSharp)}
-                    text={test.data.Testimonial}
-                    name={test.data.Name}
-                />
-            ))}
-        </div>
-    );
+  return (
+    <>
+      {/* <Seo title="James the Dog Walker - Testimonials" /> */}
+      <div className="py-10">
+        <h1 className=" text-center text-green-500 text-5xl font-bold my-6">Testimonials</h1>
+
+        {testimonials.map(test => (
+          <Testimonial
+            key={test.data.Name}
+            img={getImage(test.data.Image.localFiles[0].childImageSharp)}
+            text={test.data.Testimonial}
+            name={test.data.Name}
+          />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export const testimonialQuery = graphql`

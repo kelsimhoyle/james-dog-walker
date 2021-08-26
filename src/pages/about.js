@@ -6,6 +6,7 @@ import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
 // import TwoCta from "../components/TwoCta";
 import Card from "../components/Card";
 import BottomBorder from "../components/BottomBorder";
+import Seo from "../components/Seo";
 
 const About = ({ data }) => {
   const about = data.about.data;
@@ -13,6 +14,7 @@ const About = ({ data }) => {
 
   return (
     <>
+      <Seo title="James the Dog Walker - About" />
       <div className="md:bg-green-500 md:py-10 ">
         <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
           <div className="max-w-lg">
@@ -50,8 +52,8 @@ const About = ({ data }) => {
       <div className="bg-green-100 py-14">
         <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">
           Why choose us?
-          </h2>
-          <BottomBorder />
+        </h2>
+        <BottomBorder />
         <div className="md:flex md:justify-center md:space-x-8 md:px-14">
           {why.map(w => (
             <Card

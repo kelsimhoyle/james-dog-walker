@@ -4,13 +4,14 @@ import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Card from "../components/Card";
 import { Link } from "gatsby";
+import Seo from "../components/Seo";
 // import TwoCta from "../components/TwoCta";
 
 const Services = ({ data }) => {
   const { summary, services } = data;
   return (
     <>
-
+      <Seo title="James the Dog Walker - Services" />
       <div className="md:bg-green-500 md:py-10 ">
         <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
           <div className="max-w-lg">
