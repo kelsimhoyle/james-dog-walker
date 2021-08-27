@@ -24,6 +24,7 @@ const Services = ({ data }) => {
               </div>
               <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 md:w-96 sm:text-4xl md:text-5xl">Services</h2>
               <div
+                className="space-y-4"
                 dangerouslySetInnerHTML={{
                   __html: summary.data.Content.childMarkdownRemark.html
                 }}
