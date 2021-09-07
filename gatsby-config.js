@@ -26,6 +26,10 @@ module.exports = {
         href: "/services"
       },
       {
+        name: "Blog",
+        href: "/blog"
+      },
+      {
         name: "FAQ's",
         href: "/faq"
       },
@@ -83,6 +87,11 @@ module.exports = {
             tableName: "FAQ",
             mapping: { "Answer": "text/markdown" }
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "Blog",
+            mapping: { "Images": "fileNode", "Post": "text/markdown" }
+          },
         ]
       }
     },
@@ -97,8 +106,15 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/james.png`, // This path is relative to the root of the site.
       },
-
     },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [
+          `/testimonials`
+        ]
+    }
+  },
     `gatsby-plugin-layout`
   ],
 }
