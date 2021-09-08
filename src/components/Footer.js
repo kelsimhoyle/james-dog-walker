@@ -14,7 +14,7 @@ const Footer = ({ pages }) => (
                 </div>
             </div>
             <div className="flex flex-col">
-                <div className="flex mt-24 mb-12 flex-col md:flex-row justify-between">
+                <div className="flex mt-24 mb-12 flex-col md:flex-row justify-between items-center align-center justify-center py-6">
                     <div className="">
                         James the Dog Walker
                     </div>
@@ -25,7 +25,7 @@ const Footer = ({ pages }) => (
                     ))}
 
                     <div className="flex flex-row space-x-8 items-center justify-between">
-                        <a href="www.instagram.com/jamesthedogwalker" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/jamesthedogwalker" target="_blank" rel="noopener noreferrer">
                             <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white" />
                                 <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white" />
