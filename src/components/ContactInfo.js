@@ -1,6 +1,8 @@
 import React from "react";
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
+import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook"
 
-const ContactInfo = ({phone, email, location, instagram}) => {
+const ContactInfo = ({ phone, email, location }) => {
     return (
         <>
             <h1 className="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
@@ -35,6 +37,24 @@ const ContactInfo = ({phone, email, location, instagram}) => {
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-60 hover:text-green-500">
                     <a href={`mailto:${email}`}> {email} </a>
+                </div>
+            </div>
+            <div className="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                <FaInstagram
+                    className="w-8 h-8 text-gray-500" />
+                <div className="ml-4 text-md tracking-wide font-semibold w-60 hover:text-green-500">
+                    <a href="https://www.instagram.com/jamesthedogwalker"
+                        target="_blank"
+                        rel="noopener noreferrer"> @jamesthedogwalker</a>
+                </div>
+            </div>
+            <div className="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                <FaFacebook
+                    className="w-8 h-8 text-gray-500" />
+                <div className="ml-4 text-md tracking-wide font-semibold w-60 hover:text-green-500">
+                    <a href="https://www.facebook.com/jamesthedogwalker"
+                        target="_blank"
+                        rel="noopener noreferrer"> facebook.com/jamesthedogwalker</a>
                 </div>
             </div>
         </>

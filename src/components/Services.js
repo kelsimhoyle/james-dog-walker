@@ -38,7 +38,7 @@ const Services = () => {
             Services
           </h2>
           <BottomBorder />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
             {data.allAirtable.nodes.map(service => (
               <Card
                 img={getImage(service.data.Image.localFiles[0].childImageSharp)}
