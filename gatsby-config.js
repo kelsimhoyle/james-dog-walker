@@ -80,7 +80,7 @@ module.exports = {
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: "Services",
-            mapping: { "Image": "fileNode", "Content": "text/markdown" }
+            mapping: { "Image": "fileNode", "Content": "text/markdown"}
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
