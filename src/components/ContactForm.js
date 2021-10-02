@@ -71,7 +71,7 @@ const ContactForm = () => {
             >
                 {({ isSubmitting, errors, touched }) => (
                     <Form
-                        className="p-6 w-96 flex flex-col justify-center bg-white rounded-b-lg md:rounded-r-lg md:rounded-b-none ">
+                        className="p-6 md:w-96 flex flex-col justify-center bg-white rounded-b-lg md:rounded-r-lg md:rounded-b-none ">
                         <div className="flex flex-col">
                             <Field
                                 type="text"

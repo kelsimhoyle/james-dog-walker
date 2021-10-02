@@ -54,7 +54,7 @@ const ContactInfo = ({ phone, email, location }) => {
                 <div className="ml-4 text-md tracking-wide font-semibold w-60 hover:text-green-500">
                     <a href="https://www.facebook.com/jamesthedogwalker"
                         target="_blank"
-                        rel="noopener noreferrer"> facebook.com/jamesthedogwalker</a>
+                        rel="noopener noreferrer">/jamesthedogwalker</a>
                 </div>
             </div>
         </div>
