@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import BlogPost from "../components/BlogPost";
+import BottomBorder from "../components/BottomBorder";
 import Seo from "../components/Seo";
 
 const Blog = ({ data }) => {
@@ -12,9 +13,12 @@ const Blog = ({ data }) => {
         title="James the Dog Walker - Blog"
       />
       <div className="container  w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t px-4 md:px-0 max-w-6xl mx-auto mt-4">
-        <h1 className="text-2xl text-center tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl pt-10">
+      <div className="px-4 py-10 md:py-16  ">
+        <h1 className="text-4xl md:text-5xl tracking-tight font-extrabold text-green-500  pt-10 text-center">
           Blog
         </h1>
+        <BottomBorder />
+        </div>
         {posts.length > 0 ?
           (posts.map(post => (
             <BlogPost

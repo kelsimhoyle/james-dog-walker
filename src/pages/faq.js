@@ -11,7 +11,7 @@ const Faq = ({ data }) => {
     <>
       <Seo title="James the Dog Walker - FAQ's" />
       <div className="px-4 py-10 md:py-16  ">
-        <h1 className="text-4xl tracking-tight font-extrabold text-green-500  pt-10 text-center">
+        <h1 className="text-4xl md:text-5xl tracking-tight font-extrabold text-green-500  pt-10 text-center">
           Frequently Asked Questions
         </h1>
         <BottomBorder />
