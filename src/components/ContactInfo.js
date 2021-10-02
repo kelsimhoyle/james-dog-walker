@@ -4,7 +4,7 @@ import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook"
 
 const ContactInfo = ({ phone, email, location }) => {
     return (
-        <>
+        <div>
             <h1 className="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
                 Get in touch
             </h1>
@@ -57,7 +57,7 @@ const ContactInfo = ({ phone, email, location }) => {
                         rel="noopener noreferrer"> facebook.com/jamesthedogwalker</a>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
