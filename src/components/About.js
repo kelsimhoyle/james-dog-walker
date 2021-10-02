@@ -37,7 +37,7 @@ const About = () => {
               <div>
               <FaPaw className="text-6xl text-green-500" />
               </div>
-              <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
+              <h2 className=" text-3xl tracking-tight font-extrabold text-gray-900 md:text-5xl">About Me</h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.airtable.data.Content.childMarkdownRemark.html
