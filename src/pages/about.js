@@ -15,10 +15,10 @@ const About = ({ data }) => {
     <>
       <Seo title="James the Dog Walker - About" />
       <div className="md:flex bg-white md:overflow-hidden relative">
-        <h1 className="absolute bottom-16  w-full inset-x-1/3 md:inset-y-3/4 z-10 text-4xl md:text-5xl tracking-tight font-extrabold text-grey-900  md:text-6xl pt-10 font-serif italic drop-shadow-sm">
+        <h1 className="absolute -bottom-4 sm:min-w-max p-2 md:p-10	md:bg-transparent sm:bg-green-200 left-0 md:left-1/3 md:inset-y-3/4 z-10 text-4xl md:text-5xl tracking-tight font-extrabold text-grey-900  md:text-6xl  font-serif italic drop-shadow-sm">
           Meet James
         </h1>
-        <div className="absolute -bottom-20 -left-8 md:inset-1/4 md:-top-10 z-10 x transform rotate-45 h-auto text-green-700">
+        <div className="absolute -bottom-20 right-0 md:inset-1/4 md:-top-10 z-10 x transform rotate-45 h-auto text-green-700">
           <FaPaw className="w-16 md:w-56 h-auto md:ml-56" />
           <FaPaw className="w-16 ml-16 md:w-56 h-auto md:-mr-56" />
           <FaPaw className="invisible md:visible md:w-56 h-auto md:ml-56" />
