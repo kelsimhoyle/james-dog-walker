@@ -18,7 +18,7 @@ module.exports = {
         href: "/"
       },
       {
-        name: "Why Us?",
+        name: "About",
         href: "/about"
       },
       {

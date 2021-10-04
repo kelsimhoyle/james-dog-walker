@@ -1,9 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby"
-import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaPaw } from "@react-icons/all-files/fa/FaPaw";
-// import TwoCta from "../components/TwoCta";
+import TwoCta from "../components/TwoCta";
 import Card from "../components/Card";
 import BottomBorder from "../components/BottomBorder";
 import Seo from "../components/Seo";
@@ -15,43 +14,50 @@ const About = ({ data }) => {
   return (
     <>
       <Seo title="James the Dog Walker - About" />
-      <div className="md:bg-green-500 md:py-10 ">
-        <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
-          <div className="max-w-lg">
-            <GatsbyImage image={getImage(about.Image.localFiles[0].childImageSharp)} alt="The Doggies" />
-          </div>
-          <div className="mx-5 md:max-w-md	absolute -bottom-64 md:inset-y-1/4 md:right-20	md:mx-0	 z-10   flex flex-col justify-center items-center md:items-start space-y-2">
-            <div className="flex flex-col justify-center items-center md:items-start space-y-4 shadow-md bg-white p-10 rounded text-center	md:text-left">
-              <div>
-                <FaPaw className="text-6xl text-green-500" />
-              </div>
-              <h2 className=" text-2xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">About Me</h2>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: about.Content.childMarkdownRemark.html
-                }}
-              />
-            </div>
-            <div>
-              <div className="mt-3 sm:mt-0 sm:ml-3">
-                <Link to="/contact" className="w-full flex items-center justify-center px-12 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 md:py-4 md:text-lg md:px-10">
-                  Contact
-                </Link>
-              </div>
-              {/* <TwoCta
-                                one={{ text: "Testimonials", href: "/testimonials" }}
-                                two={{ text: "Contact", href: "/contact" }}
-                            /> */}
-            </div>
-          </div>
-
+      <div className="md:flex bg-white md:overflow-hidden relative">
+        <h1 className="absolute bottom-16  w-full inset-x-1/3 md:inset-y-3/4 z-10 text-4xl md:text-5xl tracking-tight font-extrabold text-grey-900  md:text-6xl pt-10 font-serif italic drop-shadow-sm">
+          Meet James
+        </h1>
+        <div className="absolute -bottom-20 -left-8 md:inset-1/4 md:-top-10 z-10 x transform rotate-45 h-auto text-green-700">
+          <FaPaw className="w-16 md:w-56 h-auto md:ml-56" />
+          <FaPaw className="w-16 ml-16 md:w-56 h-auto md:-mr-56" />
+          <FaPaw className="invisible md:visible md:w-56 h-auto md:ml-56" />
+          <FaPaw className="invisible md:visible md:w-56 h-auto md:-mr-56	" />
+        </div>
+        <div className=" md:flex-1 px-4 invisible	md:visible">
+        </div>
+        <div className="md:flex-1">
+          <GatsbyImage
+            image={getImage(about.Image.localFiles[0].childImageSharp)}
+            alt="The Doggies"
+            imgClassName="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          />
 
         </div>
       </div>
+      <div className="text-center w-2/3 mx-auto my-10">
+        <div
+          className="mt-3 text-gray-900 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl  my-10 "
+          dangerouslySetInnerHTML={{
+            __html: about.Content.childMarkdownRemark.html
+          }}
 
-      <div className="bg-green-100 py-14">
+        />
+        <TwoCta
+          one={{
+            href: "/services",
+            text: "View Services"
+          }}
+          two={{
+            href: "/contact",
+            text: "Contact"
+          }}
+        />
+      </div>
+
+      <div className="bg-green-200 py-14">
         <h2 className="mt-8 text-center text-5xl text-green-600 font-bold">
-          Why choose us?
+          Why choose me?
         </h2>
         <BottomBorder />
         <div className="md:flex md:justify-center md:space-x-8 md:px-14">
