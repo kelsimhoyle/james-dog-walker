@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import {FaInstagram} from "@react-icons/all-files/fa/FaInstagram";
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 
 const Footer = ({ pages }) => (
@@ -22,28 +22,34 @@ const Footer = ({ pages }) => (
                     </div>
 
                     {pages.map(page => (
-                        <Link key={page.name} to={page.href} className=" cursor-pointer text-white hover:text-green-200 uppercase p-2">{page.name}</Link>
+                        <Link
+                            key={page.name}
+                            to={page.href}
+                            className=" cursor-pointer text-white hover:text-green-200 uppercase p-2"
+                        >
+                            {page.name}
+                        </Link>
 
                     ))}
 
                     <div className="flex flex-row space-x-8 items-center justify-between">
-                        <a 
-                        href="https://www.instagram.com/jamesthedogwalker"
-                         target="_blank" 
-                         rel="noopener noreferrer"
+                        <a
+                            href="https://www.instagram.com/jamesthedogwalker"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="p-2"
-                         >
-                           <FaInstagram />
+                        >
+                            <FaInstagram />
                         </a>
-                        <a 
-                        href="https://www.facebook.com/jamesthedogwalker" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="p-2"
+                        <a
+                            href="https://www.facebook.com/jamesthedogwalker"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2"
 
                         >
                             <FaFacebook />
-                            </a>
+                        </a>
 
 
                     </div>

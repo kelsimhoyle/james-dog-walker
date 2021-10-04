@@ -18,8 +18,8 @@ const About = ({ data }) => {
         <h1 className="absolute -bottom-4 sm:min-w-max p-2 md:p-10	md:bg-transparent sm:bg-green-200 left-0 md:left-1/3 md:inset-y-3/4 z-10 text-4xl md:text-5xl tracking-tight font-extrabold text-grey-900  md:text-6xl  font-serif italic drop-shadow-sm">
           Meet James
         </h1>
-        <div className="absolute -bottom-20 right-0 md:inset-1/4 md:-top-10 z-10 x transform rotate-45 h-auto text-green-700">
-          <FaPaw className="w-16 md:w-56 h-auto md:ml-56" />
+        <div className="absolute -bottom-20 right-0 md:inset-1/4 md:-top-10 z-10 x transform rotate-45 h-auto text-green-600">
+          <FaPaw className="w-16 md:w-56 h-auto md:ml-56 " />
           <FaPaw className="w-16 ml-16 md:w-56 h-auto md:-mr-56" />
           <FaPaw className="invisible md:visible md:w-56 h-auto md:ml-56" />
           <FaPaw className="invisible md:visible md:w-56 h-auto md:-mr-56	" />
@@ -60,11 +60,10 @@ const About = ({ data }) => {
           Why choose me?
         </h2>
         <BottomBorder />
-        <div className="md:flex md:justify-center md:space-x-8 md:px-14">
+        <div className="p-4 md:flex md:justify-center md:space-x-8 md:px-14">
           {why.map(w => (
             <Card
-              key={w.data.Name}
-              title={w.data.Name}
+              key={w.data.ID}
               img={getImage(w.data.Image.localFiles[0].childImageSharp)}
               content={w.data.Content.childMarkdownRemark.html}
               btn={false}
@@ -102,7 +101,7 @@ query  {
     why: allAirtable(filter: {data: {Category: {eq: "Why"}}, table: {eq: "About"}}) {
         nodes {
           data {
-            Name
+            ID
             Content {
               childMarkdownRemark {
                 html

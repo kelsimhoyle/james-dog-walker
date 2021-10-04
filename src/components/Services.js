@@ -41,6 +41,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
             {data.allAirtable.nodes.map(service => (
               <Card
+                key={service.data.Name}
                 img={getImage(service.data.Image.localFiles[0].childImageSharp)}
                 content={service.data.Content.childMarkdownRemark.html}
                 title={service.data.Name}

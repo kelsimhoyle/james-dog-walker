@@ -4,12 +4,14 @@ var base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API_KEY }).base(pr
 
 const addContact = async (data) => {
 
- return await base('Contact').create([
-  {
-    "fields": data
-  }
-]);
- 
+  const contactCreate = await base('Contact').create([
+    {
+      "fields": data
+    }
+  ]);
+
+  return contactCreate;
+
 }
 
 export default addContact;

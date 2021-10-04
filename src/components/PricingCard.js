@@ -29,7 +29,7 @@ const PricingCard = () => {
             <p className="text-gray-600 py-4 md:py-14 md:mx-2 text-lg text-center">This is the general baseline pricing for my services. If you have other needs or multiple dogs, we can discuss your custom pricing.</p>
         <div className="flex flex-col md:flex-row justify-between">
             {data.pricing.nodes.map(node => (
-                        <div className="flex  justify-items-center content-center items-center text-gray-600 space-x-2 mx-auto">
+                        <div key={node.data.Name} className="flex  justify-items-center content-center items-center text-gray-600 space-x-2 mx-auto">
                         <p className="text-center text-2xl md:text-3xl text-green-500 font-bold">{node.data.Content.childMarkdownRemark.excerpt}</p>
                          <p className="text-center text-3xl md:text-4xl text-green-600 font-bold">/</p> 
                          <p className="text-center text-xl md:text-2xl slef-center">{node.data.Name}</p>

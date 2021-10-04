@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 import addContact from "../functions/addContact";
 import ConfirmModal from "./ConfirmModal";
@@ -35,29 +35,29 @@ const ContactSchema = Yup.object().shape({
 const ContactForm = () => {
     const [data, setData] = useState({ submitting: false, submitted: false });
 
-    const handleSubmit = values => {
+    const handleSubmit = async values => {
         setData({ ...data, submitting: true });
         const { Name, Email, Tel, Message, CrossStreets, City, Zip } = values;
 
         if (!Name, !Email) setData({ ...data, submitted: false, errors: [...data.errors, "Name and Email Required"] })
 
-        addContact({ Name, Email, Tel, Message, CrossStreets, City, Zip })
-            .then(data => {
-                setData({
-                    ...data,
-                    submitting: false,
-                    submitted: true
-                })
-            })
-            .catch(error => {
-                console.error(error)
-                setData({
-                    ...data,
-                    submitting: false,
-                    submitted: false,
-                    errors: [...data.errors, ...error]
-                })
-            })
+        try {
+            const contact = addContact({ Name, Email, Tel, Message, CrossStreets, City, Zip });
+            if (contact) setData({
+                ...contact,
+                submitting: false,
+                submitted: true
+            });
+        } catch(error) {
+            console.error(error)
+            setData({
+                submitting: false,
+                submitted: false,
+                errors: [...data.errors, ...error]
+            });
+        }
+
+
 
     }
     return (
