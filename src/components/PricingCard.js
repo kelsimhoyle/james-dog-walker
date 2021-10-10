@@ -6,22 +6,22 @@ const PricingCard = () => {
         <StaticQuery 
         query={graphql`
         query PricingQuery {
-            pricing: allAirtable(
-                filter: {table: {eq: "Services"}, data: {Category: {in: "Pricing"}}}
-                sort: {fields: id}
-              ) {
-                nodes {
-                  data {
-                    Name
-                    Content {
-                      childMarkdownRemark {
-                        excerpt
-                      }
-                    }
+          pricing: allAirtable(
+            filter: {table: {eq: "Services"}, data: {Category: {in: "Pricing"}}}
+            sort: {fields: data___ID}
+          ) {
+            nodes {
+              data {
+                Name
+                Content {
+                  childMarkdownRemark {
+                    excerpt
                   }
                 }
               }
-        }
+            }
+          }
+        }        
         `}
         render={data => (
             <div className="mt-8 md:mt-8 md:px-10 p-8 bg-white w-full bg-white rounded-xl shadow-lg hover:shadow-xl transform  transition duration-500 mx-auto md:mx-0 md:space-x-8 md:px-14">
