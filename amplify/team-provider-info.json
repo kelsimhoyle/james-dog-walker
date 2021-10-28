@@ -13,7 +13,14 @@
     },
     "categories": {
       "auth": {
-        "cognito704b3e59": {}
+        "cognito704b3e59": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries65c14f73": {
+          "deploymentBucketName": "amplify-my-aws-project-dev-110523-deployment",
+          "s3Key": "amplify-builds/AdminQueries65c14f73-664954714e74446d5854-build.zip"
+        }
       }
     }
   }
