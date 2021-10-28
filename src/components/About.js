@@ -41,7 +41,7 @@ const About = () => {
                     opacity={isVisible ? 1 : 0}
                     from={{ x: -1000 }}
                     to={{ x: 0 }}
-                    delay={500}
+                    delay={1200}
                     config={{ mass: 5, tension: 600, friction: 250 }}
                   >
                     {(styles) => (
@@ -66,7 +66,7 @@ const About = () => {
                     opacity={isVisible ? 1 : 0}
                     from={{ x: 2000 }}
                     to={{ x: 0 }}
-                    delay={500}
+                    delay={1200}
                     config={{ mass: 5, tension: 600, friction: 250 }}
                   >
                     {(styles) => (
