@@ -10,8 +10,8 @@ const OpacitySpring = ({ children }) => {
           opacity={isVisible ? 1 : 0}
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}
-          delay={1000}
-          config={{ mass: 5, tension: 600, friction: 250 }}
+          delay={500}
+          config={{ mass: 5, tension: 600, friction: 250, duration: 1500 }}
         >
           {(styles) => <animated.div style={styles}>{children}</animated.div>}
         </Spring>

@@ -7,7 +7,7 @@ const Footer = ({ pages }) => (
     <div className="w-full min-h-screen pt-6 flex items-center justify-center bg-green-800">
         <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
             <div className="w-full text-7xl font-bold">
-                <h2 className="w-full md:w-2/3">Let's get waggin' today.</h2>
+                <h2 className="w-full md:w-2/3">Let's get walkin' today.</h2>
             </div>
             <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                 <p className="w-full md:w-2/3 text-white">Contact to learn more and set up a meet and great.</p>

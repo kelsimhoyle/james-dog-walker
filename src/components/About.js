@@ -32,7 +32,7 @@ const About = () => {
         }
       `}
       render={(data) => (
-        <div className="md:bg-green-500 md:py-10">
+        <div className="md:bg-green-500 md:py-10 overflow-hidden">
           <div className=" content mx-auto max-w-screen-lg relative mb-80 mt-10 md:mt-0 md:mb-0">
             <div className="max-w-lg">
               <VisibilitySensor>
