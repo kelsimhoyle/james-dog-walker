@@ -45,6 +45,7 @@ const Services = () => {
               Services
             </h2>
             <BottomBorder />
+            <div className="mx-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
               {data.allAirtable.nodes.map((service) => (
                 <Card
@@ -60,6 +61,7 @@ const Services = () => {
             <OpacitySpring>
               <PricingCard />
             </OpacitySpring>
+            </div>
           </div>
         </div>
       )}
